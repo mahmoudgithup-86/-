@@ -1,0 +1,12 @@
+<!DOCTYPE html><html lang="ar" dir="rtl"><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>مولد أكواد الاشتراك</title>
+<body style="font-family:Tahoma;max-width:420px;margin:30px auto;padding:10px;text-align:center">
+<h3>مولد أكواد الاشتراك - Mahmoud Elbaz</h3>
+<select id="m" style="padding:8px"><option value="1">شهر</option><option value="3">3 شهور</option><option value="6">6 شهور</option><option value="12">سنة</option></select>
+<button onclick="g()" style="padding:8px 16px">إنشاء كود</button>
+<pre id="o" dir="ltr" style="font-size:16px;line-height:1.9"></pre>
+<script>
+const SALT="ELBAZ-2026-K7";
+const h=s=>{let x=5381;for(const c of s)x=((x*33)^c.charCodeAt(0))>>>0;return x.toString(36).toUpperCase().padStart(6,"0").slice(-4)};
+function g(){const m=document.getElementById("m").value,n=Math.random().toString(36).slice(2,6).toUpperCase().padEnd(4,"X");
+document.getElementById("o").textContent="ELBAZ-"+m+"-"+n+"-"+h(m+n+SALT)+"\n"+document.getElementById("o").textContent}
+</script></body></html>
